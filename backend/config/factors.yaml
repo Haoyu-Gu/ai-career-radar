@@ -1,0 +1,20 @@
+version: "2026-09-27-v1"
+factors:
+  - {slug: foundation_llm, name_zh: 大模型/基础模型, category: technology, terms: ["大模型", "llm", "foundation model", "基础模型"]}
+  - {slug: agents, name_zh: Agent/智能体, category: technology, terms: ["agent", "agentic", "智能体", "工具调用"]}
+  - {slug: multimodal, name_zh: 多模态, category: technology, terms: ["多模态", "multimodal", "multi-modal", "全模态"]}
+  - {slug: reinforcement_learning, name_zh: 强化学习/对齐, category: technology, terms: ["强化学习", "rlhf", "rlaif", "grpo", "ppo", "dpo", "alignment", "对齐"]}
+  - {slug: rag_search, name_zh: RAG/检索, category: technology, terms: ["rag", "检索增强", "搜索", "retrieval"]}
+  - {slug: aigc_generation, name_zh: AIGC/生成模型, category: technology, terms: ["aigc", "diffusion", "生成模型", "图像生成", "视频生成"]}
+  - {slug: ai_infra, name_zh: AI Infra/训练推理系统, category: technology, terms: ["ai infra", "训练框架", "推理框架", "分布式训练", "megatron", "deepspeed", "cuda", "算子", "编译器"]}
+  - {slug: robotics_auto, name_zh: 具身/机器人/智驾, category: technology, terms: ["具身", "机器人", "自动驾驶", "robot", "planning", "规划算法"]}
+  - {slug: rec_search_ads, name_zh: 搜索/推荐/广告, category: technology, terms: ["推荐", "广告", "搜索", "ranking", "召回", "排序"]}
+  - {slug: ai_safety, name_zh: AI 安全, category: technology, terms: ["ai safety", "模型安全", "对抗攻击", "安全对齐", "可信", "隐私计算", "机密计算"]}
+  - {slug: top_publication, name_zh: 顶会/论文, category: candidate, terms: ["顶会", "顶级会议", "论文发表", "发表过论文", "neurips", "icml", "iclr", "cvpr", "acl", "sigir", "kdd"]}
+  - {slug: phd, name_zh: 博士背景, category: candidate, terms: ["博士", "phd", "ph.d"]}
+  - {slug: open_source, name_zh: 开源影响力, category: candidate, terms: ["开源项目", "开源社区", "open source", "github"]}
+  - {slug: competition, name_zh: 竞赛经历, category: candidate, terms: ["竞赛", "比赛", "acm", "icpc", "kaggle", "noip", "noi", "topcoder"]}
+  - {slug: python_cpp, name_zh: Python/C++, category: candidate, terms: ["python", "c++", "c/c++"]}
+  - {slug: pytorch, name_zh: PyTorch/深度学习框架, category: candidate, terms: ["pytorch", "tensorflow", "深度学习框架"]}
+  - {slug: deployment, name_zh: 工程落地/部署, category: candidate, terms: ["落地", "部署", "工程实现", "工程能力", "产品化", "上线"]}
+  - {slug: english, name_zh: 英语/国际协作, category: candidate, terms: ["英语", "英文", "english", "国际化"]}

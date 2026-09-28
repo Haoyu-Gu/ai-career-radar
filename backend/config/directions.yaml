@@ -1,0 +1,100 @@
+version: "2026-09-28-v3"
+directions:
+  - slug: language_modeling
+    name_zh: 语言与大模型
+    dimension: application
+    description: 自然语言理解、生成与大语言模型
+    query: '"large language model" OR "natural language processing"'
+    include: ["large language model", "llm", "natural language", "nlp", "语言模型", "自然语言"]
+    exclude: ["speech language pathologist"]
+  - slug: computer_vision
+    name_zh: 视觉
+    dimension: application
+    description: 图像理解、生成与三维视觉
+    query: '"computer vision" OR "image generation"'
+    include: ["computer vision", "image generation", "vision model", "视觉", "图像生成", "3d vision"]
+    exclude: ["vision insurance"]
+  - slug: video
+    name_zh: 视频
+    dimension: application
+    description: 视频理解、生成、编辑与压缩
+    query: '"video understanding" OR "video generation"'
+    include: ["video generation", "video understanding", "video model", "视频生成", "视频理解"]
+    exclude: ["video conferencing"]
+  - slug: speech_audio
+    name_zh: 语音与音频
+    dimension: application
+    description: 语音识别、合成、音频与音乐智能
+    query: '"speech recognition" OR "audio generation" OR "music generation"'
+    include: ["speech recognition", "text to speech", "audio generation", "music generation", "语音识别", "语音合成", "音频", "音乐生成"]
+    exclude: ["speech therapist"]
+  - slug: search_recommendation_ads
+    name_zh: 搜索/推荐/广告
+    dimension: application
+    description: 检索、排序、推荐与广告算法
+    query: '"recommender systems" OR "learning to rank" OR "information retrieval"'
+    include: ["recommender", "recommendation", "ranking", "information retrieval", "搜索", "推荐", "广告算法"]
+    exclude: []
+  - slug: embodied_robotics
+    name_zh: 具身与机器人
+    dimension: application
+    description: 机器人学习、具身智能与操作
+    query: '"robot learning" OR "embodied artificial intelligence"'
+    include: ["robot learning", "robotics", "embodied ai", "具身", "机器人"]
+    exclude: ["robotic process automation"]
+  - slug: ai_for_science
+    name_zh: AI for Science
+    dimension: application
+    description: 科学计算、蛋白、材料与药物发现
+    query: '"AI for science" OR "protein language model" OR "scientific machine learning"'
+    include: ["ai for science", "protein language", "drug discovery", "scientific machine learning", "科学计算", "蛋白", "药物发现"]
+    exclude: []
+  - slug: pretraining
+    name_zh: 预训练
+    dimension: technique
+    description: 基础模型数据、架构与规模化训练
+    query: '"foundation model pretraining" OR "large scale pre-training"'
+    include: ["pretraining", "pre-training", "foundation model training", "预训练"]
+    exclude: []
+  - slug: posttraining_rl
+    name_zh: 后训练与强化学习
+    dimension: technique
+    description: 对齐、偏好优化、强化学习与后训练
+    query: '"language model post-training" OR "reinforcement learning from human feedback"'
+    include: ["post-training", "posttraining", "rlhf", "reinforcement learning", "preference optimization", "后训练", "强化学习", "对齐"]
+    exclude: ["robot reinforcement"]
+  - slug: reasoning
+    name_zh: 推理能力
+    dimension: technique
+    description: 模型推理、规划与思维链能力
+    query: '"language model reasoning" OR "chain of thought"'
+    include: ["reasoning model", "chain of thought", "reasoning ability", "推理能力", "思维链"]
+    exclude: ["inference latency", "inference serving", "推理加速"]
+  - slug: agents_rag
+    name_zh: Agent 与 RAG
+    dimension: technique
+    description: 智能体、工具调用、检索增强生成
+    query: '"LLM agent" OR "retrieval augmented generation"'
+    include: ["agentic", "llm agent", "tool use", "retrieval augmented", "rag", "智能体", "工具调用", "检索增强"]
+    exclude: ["travel agent"]
+  - slug: multimodal
+    name_zh: 多模态
+    dimension: technique
+    description: 跨模态理解与生成
+    query: '"multimodal model" OR "vision language model"'
+    include: ["multimodal", "multi-modal", "vision language", "vlm", "多模态", "视觉语言"]
+    exclude: []
+  - slug: generative_models
+    name_zh: 生成模型
+    dimension: technique
+    description: 扩散、流模型与其他生成方法
+    query: '"diffusion model" OR "generative model"'
+    include: ["diffusion model", "flow matching", "generative model", "扩散模型", "生成模型"]
+    exclude: []
+  - slug: inference_efficiency
+    name_zh: 推理加速与压缩
+    dimension: technique
+    description: 推理系统、量化、蒸馏和模型压缩
+    query: '"machine learning inference optimization" OR "model quantization"'
+    include: ["inference optimization", "inference serving", "quantization", "distillation", "model compression", "推理加速", "量化", "蒸馏"]
+    exclude: ["reasoning ability", "chain of thought"]

@@ -1,0 +1,59 @@
+version: "2026-09-27-v2"
+# `verified` means the public endpoint was checked during this implementation.
+# `pending` companies remain in the candidate pool and are never counted as connected.
+sources:
+  - {slug: anthropic, company: Anthropic, group: Anthropic, market: overseas_ai, homepage: "https://www.anthropic.com", careers_url: "https://www.anthropic.com/careers/jobs", adapter: greenhouse, namespace: greenhouse, token: anthropic, status: verified}
+  - {slug: scale-ai, company: Scale AI, group: Scale AI, market: overseas_ai, homepage: "https://scale.com", careers_url: "https://scale.com/careers", adapter: greenhouse, namespace: greenhouse, token: scaleai, status: verified}
+  - {slug: graphcore, company: Graphcore, group: SoftBank, market: overseas_ai, homepage: "https://www.graphcore.ai", careers_url: "https://www.graphcore.ai/careers", adapter: greenhouse, namespace: greenhouse, token: graphcore, status: verified}
+  - {slug: level-ai, company: Level AI, group: Level AI, market: overseas_ai, homepage: "https://thelevel.ai", careers_url: "https://jobs.lever.co/levelai", adapter: lever, namespace: lever, token: levelai, status: verified}
+  - {slug: openai, company: OpenAI, group: OpenAI, market: overseas_ai, homepage: "https://openai.com", careers_url: "https://openai.com/careers/search/", adapter: manual, namespace: official, status: accessible, notes: "官方页面可访问；当前版本未对其内部接口做未经文档支持的逆向。"}
+  - {slug: google-deepmind, company: Google DeepMind, group: Alphabet, market: overseas_internet, homepage: "https://deepmind.google", careers_url: "https://deepmind.google/careers/", adapter: manual, namespace: official, status: accessible}
+  - {slug: microsoft, company: Microsoft, group: Microsoft, market: overseas_internet, homepage: "https://www.microsoft.com", careers_url: "https://jobs.careers.microsoft.com/global/en/search", adapter: manual, namespace: official, status: accessible}
+  - {slug: meta, company: Meta, group: Meta, market: overseas_internet, homepage: "https://www.meta.com", careers_url: "https://www.metacareers.com/jobs/", adapter: manual, namespace: official, status: accessible}
+  - {slug: amazon, company: Amazon, group: Amazon, market: overseas_internet, homepage: "https://www.amazon.com", careers_url: "https://www.amazon.jobs/en/", adapter: manual, namespace: official, status: accessible}
+  - {slug: apple, company: Apple, group: Apple, market: overseas_internet, homepage: "https://www.apple.com", careers_url: "https://jobs.apple.com/en-us/search", adapter: manual, namespace: official, status: accessible}
+  - {slug: nvidia, company: NVIDIA, group: NVIDIA, market: overseas_ai, homepage: "https://www.nvidia.com", careers_url: "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite", adapter: manual, namespace: official, status: accessible}
+  - {slug: perplexity, company: Perplexity, group: Perplexity, market: overseas_ai, homepage: "https://www.perplexity.ai", careers_url: "https://www.perplexity.ai/hub/careers", adapter: manual, namespace: official, status: accessible}
+  - {slug: cohere, company: Cohere, group: Cohere, market: overseas_ai, homepage: "https://cohere.com", careers_url: "https://cohere.com/careers", adapter: manual, namespace: official, status: accessible}
+  - {slug: mistral, company: Mistral AI, group: Mistral AI, market: overseas_ai, homepage: "https://mistral.ai", careers_url: "https://mistral.ai/careers", adapter: manual, namespace: official, status: accessible}
+  - {slug: xai, company: xAI, group: xAI, market: overseas_ai, homepage: "https://x.ai", careers_url: "https://x.ai/careers", adapter: manual, namespace: official, status: accessible}
+
+  - {slug: tencent, company: 腾讯, group: 腾讯, market: cn_internet, homepage: "https://www.tencent.com", careers_url: "https://join.qq.com/post.html?query=14,20", adapter: tencent_qingyun, namespace: tencent-official, status: verified, notes: "腾讯校招官网公开 API；按招聘项目映射 14（青云应届）和 20（青云实习）一次拉取完整列表，并发补齐 JD 详情。"}
+  - {slug: alibaba, company: 阿里巴巴, group: 阿里巴巴, market: cn_internet, homepage: "https://www.alibabagroup.com", careers_url: "https://campus-talent.alibaba.com/campus/position?batchId=100000760001", adapter: alibaba_campus, namespace: alibaba-official, status: verified, notes: "阿里校招官网公开 API；先取动态 CSRF 与会话 Cookie，再按 2027 届公司级批次 100000760001 单页全量抓取。阿里星显式筛选是该批次子集，验收沿用同学文件的 company_level_batch 口径。"}
+  - {slug: ant-group, company: 蚂蚁集团, group: 阿里巴巴, market: cn_internet, homepage: "https://www.antgroup.com", careers_url: "https://talent.antgroup.com/campus-full-list?type=talentPlan", adapter: ant_talent, namespace: ant-official, status: verified, notes: "蚂蚁招聘官网公开 API；经官网前端声明的生产代理目标抓取，完整翻页后保留 Plan A 与研究型实习项目。"}
+  - {slug: bytedance, company: 字节跳动, group: 字节跳动, market: cn_internet, homepage: "https://www.bytedance.com", careers_url: "https://jobs.bytedance.com/campus/position", adapter: bytedance_campus, namespace: bytedance-official, status: verified, notes: "官网公开 API；限定 2027届前沿技术领域人才校招与实习招聘两个项目，全量 limit/offset 翻页。"}
+  - {slug: baidu, company: 百度, group: 百度, market: cn_internet, homepage: "https://www.baidu.com", careers_url: "https://talent.baidu.com/jobs/list?projectType=3&recruitType=GRADUATE", adapter: baidu_ssr, namespace: baidu-official, status: verified, notes: "当前接入官网 AIDU 校招项目的 SSR 公开列表；官网报告 12 条，首屏可核验 10 条，因此扫描标记为 partial。"}
+  - {slug: meituan, company: 美团, group: 美团, market: cn_internet, homepage: "https://www.meituan.com", careers_url: "https://career.meituan.com/web/beidou?hiringType=2_2-3", adapter: meituan_beidou, namespace: meituan-official, status: verified, notes: "美团招聘官网公开 API；限定招聘类型 2-3（北斗实习），按 totalPage 完整翻页。"}
+  - {slug: jd, company: 京东, group: 京东, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: pdd, company: 拼多多, group: 拼多多, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: kuaishou, company: 快手, group: 快手, market: cn_internet, careers_url: "https://campus.kuaishou.cn/recruit/campus/e/#/campus/jobs?pageNum=1&positionLabel=kstar", adapter: kuaishou_campus, namespace: kuaishou-official, status: verified, notes: "官网公开 API；positionLabel=kstar，全量 pageNum/pageSize 翻页。"}
+  - {slug: xiaohongshu, company: 小红书, group: 小红书, market: cn_internet, careers_url: "https://job.xiaohongshu.com/campus", adapter: manual, namespace: official, status: accessible}
+  - {slug: bilibili, company: 哔哩哔哩, group: 哔哩哔哩, market: cn_internet, careers_url: "https://jobs.bilibili.com/campus/", adapter: manual, namespace: official, status: blocked, notes: "官网返回 412 安全挑战；不绕过访问控制。"}
+  - {slug: netease, company: 网易, group: 网易, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: didi, company: 滴滴, group: 滴滴, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: trip, company: 携程, group: 携程, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: ke, company: 贝壳, group: 贝壳, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: weibo, company: 微博, group: 新浪, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: zhihu, company: 知乎, group: 知乎, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: 360, company: 360, group: 360, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: tme, company: 腾讯音乐, group: 腾讯, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: oppo, company: OPPO, group: OPPO, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: vivo, company: vivo, group: vivo, market: cn_internet, adapter: manual, namespace: official, status: pending}
+  - {slug: xiaomi, company: 小米, group: 小米, market: cn_internet, careers_url: "https://hr.xiaomi.com/website/top-talent.html", adapter: manual, namespace: official, status: accessible, notes: "顶尖人才官网可访问；列表接口仍在核验。"}
+  - {slug: huawei, company: 华为, group: 华为, market: cn_internet, adapter: manual, namespace: official, status: pending}
+
+  - {slug: deepseek, company: DeepSeek, group: 幻方, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: moonshot, company: 月之暗面, group: 月之暗面, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: zhipu, company: 智谱, group: 智谱, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: minimax, company: MiniMax, group: MiniMax, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: stepfun, company: 阶跃星辰, group: 阶跃星辰, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: baichuan, company: 百川智能, group: 百川智能, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: 01-ai, company: 零一万物, group: 零一万物, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: sensetime, company: 商汤科技, group: 商汤科技, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: fourth-paradigm, company: 第四范式, group: 第四范式, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: horizon, company: 地平线, group: 地平线, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: pony-ai, company: 小马智行, group: 小马智行, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: moma, company: Momenta, group: Momenta, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: unitree, company: 宇树科技, group: 宇树科技, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: galbot, company: 银河通用, group: 银河通用, market: cn_ai, adapter: manual, namespace: official, status: pending}
+  - {slug: shanghai-ai-lab, company: 上海人工智能实验室, group: 上海人工智能实验室, market: cn_ai, adapter: manual, namespace: official, status: pending}
